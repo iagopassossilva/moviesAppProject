@@ -5,13 +5,13 @@ import type { OverlayEventDetail } from '@ionic/core';
 import { TmdbService } from '../services/tmdb';
 import { Favorites } from '../services/favorites';
 import { RouterLink } from '@angular/router';
-
+import { RatingTextPipe } from '../pipes/rating-text-pipe';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, DatePipe, SlicePipe, DecimalPipe,RouterLink],
+  imports: [IonicModule, CommonModule, DatePipe, SlicePipe, DecimalPipe,RouterLink,RatingTextPipe],
 })
 export class HomePage implements OnInit {
   movies: any[] = [];

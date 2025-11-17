@@ -10,11 +10,11 @@
         placeholder="Buscar filmes..."
         (ionInput)="onSearchChange($event)"
         animated
-        mode="ios"
+        mode="md"
       ></ion-searchbar>
 
       <a routerLink="/favorites">
-        <img src="../../assets/icon/coracao.png" alt="icone-coracao" width="25">
+        <img src="../../assets/imagens/coracao-ecuro.png" alt="icone" width="30">
       </a>
 
     </div>
@@ -42,7 +42,7 @@
 
       <!-- Botão de favoritos -->
       <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="adicionaFilme(movie)">
+        <ion-item-option color="success" (click)="adicionaFilme(movie)">
           <ion-icon name="heart"></ion-icon>
         </ion-item-option>
       </ion-item-options>

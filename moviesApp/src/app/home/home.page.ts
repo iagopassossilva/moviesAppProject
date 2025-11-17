@@ -6,6 +6,7 @@ import { TmdbService } from '../services/tmdb';
 import { Favorites } from '../services/favorites';
 import { RouterLink } from '@angular/router';
 import { RatingTextPipe } from '../pipes/rating-text-pipe';
+import { IonIcon } from '@ionic/angular/standalone';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',

@@ -1,20 +1,24 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      <a [routerLink]="'/home'">
-        <img src="../../assets/imagens/logo pobre.png" alt="Logo" width="40px" >
+    <div class="header-container">
+
+      <a routerLink="/home">
+        <img src="../../assets/imagens/logo pobre.png" alt="Logo" width="40px">
       </a>
-    </ion-title>
 
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="'/favorites'">
-        <ion-icon name="heart"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+      <ion-searchbar
+        placeholder="Buscar filmes..."
+        (ionInput)="onSearchChange($event)"
+        animated
+        mode="ios"
+      ></ion-searchbar>
+
+      <a routerLink="/favorites">
+        <img src="../../assets/icon/coracao.png" alt="icone-coracao" width="25">
+      </a>
+
+    </div>
   </ion-toolbar>
-
-  <ion-searchbar placeholder="Buscar filmes..." (ionInput)="onSearchChange($event)">
-  </ion-searchbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">

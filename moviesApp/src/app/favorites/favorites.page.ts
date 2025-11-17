@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Favorites } from '../services/favorites';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.page.html',
   standalone: true,
-  imports: [IonicModule, CommonModule]
+  imports: [IonicModule, CommonModule, RouterLink]
 })
 export class FavoritesPage {
 

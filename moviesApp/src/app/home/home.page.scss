@@ -24,4 +24,20 @@ ion-item{
       color:rgb(236,82,43)
    }
 
+    .logo {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .logo, img {
+      pointer-events: none; /* evita que imagem capture o clique se o link já é o pai */
+      display: block;
+
+    }
+
+    ion-icon{
+      color: white;
+    }
+
+
 }

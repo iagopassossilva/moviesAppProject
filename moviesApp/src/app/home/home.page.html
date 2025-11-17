@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Filmes</ion-title>
+    <ion-title>
+      <a [routerLink]="'/home'">
+        <img src="../../assets/imagens/logo pobre.png" alt="Logo" width="40px" >
+      </a>
+    </ion-title>
+
     <ion-buttons slot="end">
       <ion-button [routerLink]="'/favorites'">
-        Favoritos
+        <ion-icon name="heart"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -31,9 +36,9 @@
         </ion-chip>
       </ion-item>
 
-      <!--Ao clicar envia o filme como parametro-->
+      <!-- Botão de favoritos -->
       <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="addToFav(movie)">
+        <ion-item-option color="danger" (click)="adicionaFilme(movie)">
           <ion-icon name="heart"></ion-icon>
         </ion-item-option>
       </ion-item-options>

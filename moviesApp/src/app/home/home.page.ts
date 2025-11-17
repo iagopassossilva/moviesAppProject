@@ -55,7 +55,7 @@ export class HomePage implements OnInit {
   }
 
   //Adiciona o filme 
-  addToFav(movie: any) {
+  adicionaFilme(movie: any) {
    this.fav.add(movie);  
    this.showToast();   
   }

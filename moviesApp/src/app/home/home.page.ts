@@ -58,17 +58,9 @@ export class HomePage implements OnInit {
   //Adiciona o filme 
   adicionaFilme(movie: any) {
    this.fav.add(movie);  
-   this.showToast();   
+      
   }
-  async showToast() {
-  const toast = await this.toastController.create({
-    message: 'Filme adicionado aos favoritos!',
-    duration: 1200,
-    color: 'success',
-    });
-
-  toast.present();
-  }
+ 
 
   setResult(event: CustomEvent<OverlayEventDetail>) {
     console.log(`Dismissed with role: ${event.detail.role}`);

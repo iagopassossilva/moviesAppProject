@@ -19,19 +19,21 @@
 <ion-content [fullscreen]="true">
   <article>
     @for (movie of fav.getAll(); track movie) {
-      <ion-item>
-          <ion-thumbnail slot="start">
-            <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Poster do filme" />
-          </ion-thumbnail>
-        <ion-label>
-            <h2>{{ movie.title | uppercase }}</h2>
-            <p>{{ movie.release_date | date: 'dd/MM/yyyy' }}</p>
-            <p>{{ movie.vote_average | ratingText }} </p>
-          </ion-label>
-        <ion-button slot="end" color="danger" (click)="fav.remove(movie.id)">
-          Remover
-        </ion-button>
-      </ion-item>
+      <ion-list>
+        <ion-item lines="full">
+            <ion-thumbnail slot="start">
+              <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Poster do filme" />
+            </ion-thumbnail>
+          <ion-label>
+              <h2>{{ movie.title | uppercase }}</h2>
+              <p>{{ movie.release_date | date: 'dd/MM/yyyy' }}</p>
+              <p>{{ movie.vote_average | ratingText }} </p>
+            </ion-label>
+          <ion-button slot="end" color="danger" (click)="fav.remove(movie.id)">
+            Remover
+          </ion-button>
+        </ion-item>
+      </ion-list>
     }@empty {
       <p>Nenhum filme favoritado</p>
     }

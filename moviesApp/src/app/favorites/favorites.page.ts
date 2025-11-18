@@ -10,13 +10,16 @@ import { RatingTextPipe } from '../pipes/rating-text-pipe';
   templateUrl: './favorites.page.html',
   styleUrls: ['./favorites.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, RouterLink, RatingTextPipe]
+  imports: [IonicModule, CommonModule, RouterLink, RatingTextPipe],
 })
 export class FavoritesPage {
 
-  constructor(public fav: Favorites) {}
+  constructor(
+    public fav: Favorites
+  ) {}
 
   remove(movie: any) {
-    this.fav.remove(movie.id)
+    this.fav.remove(movie.id);
   }
+
 }

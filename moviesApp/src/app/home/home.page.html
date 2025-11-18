@@ -36,9 +36,24 @@
             <p>{{ movie.vote_average | ratingText }}</p>
           </ion-label>
 
-          <ion-chip color="success" outline>
-            <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
-          </ion-chip>
+          
+          <!-- Diretiva @IF -->
+          @if (movie.vote_average >= 7) {
+            <ion-chip color="success" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+          @if (movie.vote_average >= 4 && movie.vote_average < 7) {
+            <ion-chip color="warning" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+          @if (movie.vote_average < 4) {
+            <ion-chip color="danger" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+
         </ion-item>
 
         <!-- Botão de favoritos -->

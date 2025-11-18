@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>detalhe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @for (movie of movies; track movies) {
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item lines="full">
+          <ion-thumbnail slot="start">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Poster do filme" />
+          </ion-thumbnail>
+
+          <ion-label class="ion-text-wrap">
+            <h2>{{ movie.title | uppercase }}</h2>
+            <p>{{ movie.release_date | date: 'dd/MM/yyyy' }}</p>
+            <p>{{ movie.vote_average | ratingText }}</p>
+          </ion-label>
+
+          
+          <!-- Diretiva @IF -->
+          @if (movie.vote_average >= 7) {
+            <ion-chip color="success" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+          @if (movie.vote_average >= 4 && movie.vote_average < 7) {
+            <ion-chip color="warning" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+          @if (movie.vote_average < 4) {
+            <ion-chip color="danger" outline>
+              <ion-label>{{ (movie.vote_average * 10) | number: '1.0-0' }}%</ion-label>
+            </ion-chip>
+          }
+
+        </ion-item>
+
+        <!-- Botão de favoritos -->
+        <ion-item-options side="end">
+          <ion-item-option color="success" (click)="adicionaFilme(movie)">
+            <ion-icon name="heart"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        
+      </ion-item-sliding>
+    </ion-list>
+  }
+</ion-content>
+

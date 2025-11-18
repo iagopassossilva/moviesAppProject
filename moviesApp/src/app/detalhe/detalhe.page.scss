@@ -1,0 +1,55 @@
+ion-item{
+  --pading-start: 10px;
+  --inner-padding-end: 10px;
+
+    ion-thumbnail{
+        height: 100%;
+        margin-inline-end: 10px;
+    }
+
+    ion-chip{
+      padding: 3px;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 0.8erm;
+    }
+
+    p {
+      font-size: 0.06 erm;
+    }
+
+    p+p{
+      color:rgb(236,82,43)
+    }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  // background-color: #5b00d1;
+  background-color: #0D0D0D;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+ion-searchbar {
+  flex: 1;
+  max-width: 300px;
+  margin: 15px;
+
+  
+  
+}
+
+ion-searchbar {
+  --border-radius: 20px;     
+  --background: #2b2b2b;     
+  --color: #fff;             
+  --placeholder-color: #aaa; 
+  --icon-color: #fff;        
+}

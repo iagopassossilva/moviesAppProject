@@ -1,3 +1,5 @@
+
+//Cabeçalho (Header)
 <ion-header>
   <ion-toolbar >
     <div class="header-container">
@@ -21,8 +23,12 @@
   </ion-toolbar>
 </ion-header>
 
+//Body
 <ion-content [fullscreen]="true">
-  @for (movie of movies; track movies) {
+// Loop de angular 17+ para repetir o bloco de HTML para cada item da lista de movies.
+ @for (movie of movies; track movie.id) {
+
+
     <ion-list>
       <ion-item-sliding>
         <ion-item lines="full">

@@ -27,15 +27,16 @@
 <ion-content [fullscreen]="true">
 // Loop de angular 17+ para repetir o bloco de HTML para cada item da lista de movies.
  @for (movie of movies; track movie.id) {
-
-
     <ion-list>
       <ion-item-sliding>
+        // line=full mostra linha completa do item, ocupando 100% da largura.
         <ion-item lines="full">
+          // slot=start alinha a iamgem para começar a esquerda. Default ficaria no meio e end na direita.
           <ion-thumbnail slot="start">
             <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Poster do filme" />
           </ion-thumbnail>
 
+          // Irá pega o retorno da API TMDB e retorna JSON os dados e podemos manipular, nesse caso pegando título data e rating.
           <ion-label class="ion-text-wrap">
             <h2>{{ movie.title | uppercase }}</h2>
             <p>{{ movie.release_date | date: 'dd/MM/yyyy' }}</p>

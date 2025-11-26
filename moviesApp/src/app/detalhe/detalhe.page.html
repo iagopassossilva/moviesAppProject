@@ -21,7 +21,9 @@
     <div class="card">
       <ion-card>
         <ion-img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"></ion-img>
+        
         <ion-card-header>
+          
           <ion-card-title>{{ movie.title }}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
@@ -30,6 +32,13 @@
           <p>Descrição:</p>
           <p>{{ movie.overview}}</p>  
         </ion-card-content>
+        
+        <div class="divTrailers">
+          <p>Trailers:</p>
+          <ion-button size="small" color="black"  pesquisaTrailer [movieTitle]="movie.title" idioma="pt-BR"><img src="https://cdn-icons-png.flaticon.com/128/630/630591.png" alt="" width="20px"></ion-button>
+          <ion-button size="small" color="black" pesquisaTrailer [movieTitle]="movie.title" idioma="en-US"><img src="https://cdn-icons-png.flaticon.com/128/330/330459.png" alt="" width="20px"></ion-button>
+        </div>
+        
       </ion-card>
     </div>
     

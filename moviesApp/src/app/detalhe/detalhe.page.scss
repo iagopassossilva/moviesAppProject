@@ -17,9 +17,6 @@
 }
 
 
-ion-content{
-
-} 
 .card{
   display: flex ;
   align-items: center;
@@ -33,4 +30,17 @@ ion-card{
 }
 ion-card-title, ion-card-content{
   text-align: center;
+}
+
+.divTrailers{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.divTrailers p{
+  margin: 0;
+  font-weight: 600;
+  color: rgb(212, 212, 212);
 }
